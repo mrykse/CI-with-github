@@ -44,6 +44,10 @@ jobs:
         tags: |
           mrykse/ci-with-github:latest
           mrykse/ci-with-github:${{ github.sha }}
+        push-args: --password-stdin
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
   deploy:
     runs-on: ubuntu-latest
